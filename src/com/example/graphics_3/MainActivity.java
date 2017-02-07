@@ -43,6 +43,15 @@ public class MainActivity extends Activity {
 			canvas.drawRect(100, 5, 200, 30, paint);
 			// draw red line with anti aliasing turned off
 			paint.setAntiAlias(false);
+			paint.setColor(Color.RED);
+			canvas.drawLine(30, 50, 400, 30, paint);
+			// draw the rotated text
+			canvas.rotate(-30);
+			paint.setStyle(Paint.Style.FILL);
+			canvas.drawText("Basic_Graphical_notations", 40, 180, paint);
+			// undo the rotate
+			canvas.restore();
+
 			
 		}
 	}
