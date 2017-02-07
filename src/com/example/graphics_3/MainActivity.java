@@ -1,5 +1,4 @@
 package com.example.graphics_3;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -34,7 +33,25 @@ public class MainActivity extends Activity {
 			// make the entire canvas white
 			paint.setColor(Color.WHITE);
 			canvas.drawPaint(paint);
-			
+			// draw blue circle with anti aliasing turned off
+			paint.setAntiAlias(false);
+			paint.setColor(Color.BLUE);
+			canvas.drawCircle(20, 20, 15, paint);
+			// draw green rectangle with anti aliasing turned on
+			paint.setAntiAlias(true);
+			paint.setColor(Color.GREEN);
+			canvas.drawRect(100, 5, 200, 30, paint);
+			// draw red line with anti aliasing turned off
+			paint.setAntiAlias(false);
+			paint.setColor(Color.RED);
+			canvas.drawLine(30, 50, 400, 30, paint);
+			// draw the rotated text
+			canvas.rotate(-30);
+			paint.setStyle(Paint.Style.FILL);
+			canvas.drawText("Basic_Graphical_notations", 40, 180, paint);
+			// undo the rotate
+			canvas.restore();
+		}
 	}
 
 	@Override
